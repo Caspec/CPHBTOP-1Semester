@@ -11,14 +11,14 @@ namespace nabane.traindriver
     {
         private int licens;
 
-        public Traindriver(int id, string name, int age, string email, bool admin, bool train, int licens) : base(id, name, age, email, admin, train)
+        public Traindriver(int id, string name, int age, string email, bool title, int licens) : base(id, name, age, email, title)
         {
             this.licens = licens;
         }
 
         public override string ToString()
         {
-            return "Traindriver number: " + this.licens;
+            return "Train Driver: " + ID + " " + Name + " Licens: " + licens;
         }
 
     }

@@ -58,22 +58,13 @@ namespace nabane {
         protected global::System.Web.UI.WebControls.TextBox TextBox_email;
         
         /// <summary>
-        /// DropDownList_admin control.
+        /// DropDownList_title control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList_admin;
-        
-        /// <summary>
-        /// DropDownList_train control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList_train;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_title;
         
         /// <summary>
         /// Button_createPerson control.
@@ -94,21 +85,39 @@ namespace nabane {
         protected global::System.Web.UI.WebControls.Label Label_createError;
         
         /// <summary>
-        /// Button_showPerson control.
+        /// Button_showAdmin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_showPerson;
+        protected global::System.Web.UI.WebControls.Button Button_showAdmin;
         
         /// <summary>
-        /// ListBox_showPerson control.
+        /// Button_showDriver control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox_showPerson;
+        protected global::System.Web.UI.WebControls.Button Button_showDriver;
+        
+        /// <summary>
+        /// ListBox_showAdmin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox ListBox_showAdmin;
+        
+        /// <summary>
+        /// ListBox_showDriver control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox ListBox_showDriver;
     }
 }

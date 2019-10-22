@@ -10,7 +10,7 @@ namespace nabane.administrator
     {
         // private fields if needed
 
-        public Administrator(int id, string name, int age, string email, bool admin, bool train) : base(id, name, age, email, admin, train)
+        public Administrator(int id, string name, int age, string email, bool title) : base(id, name, age, email, title)
         {
 
         }
@@ -29,7 +29,7 @@ namespace nabane.administrator
 
         public override string ToString()
         {
-            return "Administrator: " + " adminwork...";
+            return "Administrator: " + ID + " " + Name;
         }
 
     }

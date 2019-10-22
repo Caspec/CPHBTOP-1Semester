@@ -12,8 +12,7 @@ namespace nabane
         private string name;
         private int age;
         private string email;
-        private bool admin;
-        private bool train;
+        private bool title;
 
         public int ID
         {
@@ -39,31 +38,25 @@ namespace nabane
             set { email = value; }
         }
 
-        public bool Admin
+        public bool Title
         {
-            get { return admin; }
-            set { admin = value; }
+            get { return title; }
+            set { title = value; }
         }
 
-        public bool Train
-        {
-            get { return train; }
-            set { train = value; }
-        }
 
         public Person()
         {
 
         }
 
-        public Person(int id, string name, int age, string email, bool admin, bool train)
+        public Person(int id, string name, int age, string email, bool title)
         {
             this.ID = id;
             this.Name = name;
             this.Age = age;
             this.Email = email;
-            this.Admin = admin;
-            this.Train = train;
+            this.Title = title;
         }
 
         public virtual string ChangeEmail(string changeemail)

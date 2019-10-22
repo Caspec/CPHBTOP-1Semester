@@ -49,12 +49,8 @@
                                     <td>Email: </td><td><asp:TextBox ID="TextBox_email" runat="server"></asp:TextBox></td><td></td>
                                 </tr>
                                 <tr>
-                                    <td>Admin: </td><td><asp:DropDownList ID="DropDownList_admin" runat="server"><asp:ListItem Selected="True" Value="true">Yes</asp:ListItem>
-    <asp:ListItem Value="false">No</asp:ListItem></asp:DropDownList></td><td></td>
-                                </tr>
-                                <tr>
-                                    <td>Train Driver</td><td><asp:DropDownList ID="DropDownList_train" runat="server"><asp:ListItem Selected="True" Value="true">Yes</asp:ListItem>
-    <asp:ListItem Value="false">No</asp:ListItem></asp:DropDownList></td><td></td>
+                                    <td>Title: </td><td><asp:DropDownList ID="DropDownList_title" runat="server"><asp:ListItem Selected="True" Value="true">Administrator</asp:ListItem>
+    <asp:ListItem Value="false">Train driver</asp:ListItem></asp:DropDownList></td><td></td>
                                 </tr>
                                 <tr>
                                     <td><asp:Button ID="Button_createPerson" runat="server" Text="Create" OnClick="Button_createPerson_Click" /></td><td></td><td></td>
@@ -66,13 +62,18 @@
 
                             <table>
                                 <tr>
-                                    <td><asp:Button ID="Button_showPerson" runat="server" Text="Show Persons" OnClick="Button_showPerson_Click" /></td>
+                                    <td><asp:Button ID="Button_showAdmin" runat="server" Text="Show Admin" OnClick="Button_showAdmin_Click" /></td>
+                                </tr>
+                                <tr>
+                                    <td><asp:Button ID="Button_showDriver" runat="server" Text="Show Driver"  OnClick="Button_showDriver_Click" /></td><td></td><td></td>
                                 </tr>
                             </table>
 
                             
 
-                            <asp:ListBox ID="ListBox_showPerson" runat="server" Height="300px"></asp:ListBox>
+                            <asp:ListBox ID="ListBox_showAdmin" runat="server" Height="300px"></asp:ListBox>
+                            <br />
+                            <asp:ListBox ID="ListBox_showDriver" runat="server" Height="300px"></asp:ListBox>
 
 						</div>
 					</section>

@@ -11,78 +11,67 @@ namespace nabane
 {
     public partial class admin : System.Web.UI.Page
     {
-        ArrayList arr = new ArrayList();
+        ArrayList arrAdmin = new ArrayList();
+        ArrayList arrTrain = new ArrayList();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["myPerson"] == null)
+            if (Session["myAdmin"] == null || Session["myDriver"] == null)
             {
                 ListBox_showAdmin.Items.Add("Empty");
                 ListBox_showTrain.Items.Add("Empty");
             }
             else
             {
-                arr = (ArrayList)Session["myPerson"];
+                arrAdmin = (ArrayList)Session["myAdmin"];
+                arrTrain = (ArrayList)Session["myDriver"];
                 ListBox_showAdmin.Items.Clear();
                 ListBox_showTrain.Items.Clear();
-                
-
-                for (int i = 0; i < arr.Count; i++)
+                for (int i = 0; i < arrAdmin.Count; i++)
                 {
-                    if (((Person)arr[i]).Admin)
-                    {
-                        ListBox_showAdmin.Items.Add(arr[i].ToString());
-                    }
-                    else if(((Person)arr[i]).Train)
-                    {
-                        ListBox_showTrain.Items.Add(arr[i].ToString());
-                    }  
+                    ListBox_showAdmin.Items.Add(arrAdmin[i].ToString());
+                }
+                for (int i = 0; i < arrTrain.Count; i++)
+                {
+                    ListBox_showTrain.Items.Add(arrTrain[i].ToString());
                 }
             }
         }
 
         protected void Button_showAdmin_Click(object sender, EventArgs e)
         {
-            arr = (ArrayList)Session["myPerson"];
+            arrAdmin = (ArrayList)Session["myAdmin"];
             ListBox_showAdmin.Items.Clear();
-            Person p = new Person();
 
-            if (arr == null)
+            if (arrAdmin == null)
             {
                 ListBox_showAdmin.Items.Add("Empty");
                 ListBox_showTrain.Items.Add("Empty");
             }
             else
             {
-                for (int i = 0; i < arr.Count; i++)
-                {
-                    if(((Person)arr[i]).Admin)
+                    for (int i = 0; i < arrAdmin.Count; i++)
                     {
-                        ListBox_showAdmin.Items.Add(arr[i].ToString());
+                        ListBox_showAdmin.Items.Add(arrAdmin[i].ToString());
                     }
-                }
             }
         }
 
         protected void Button_showTrain_Click(object sender, EventArgs e)
         {
-            arr = (ArrayList)Session["myPerson"];
-            ListBox_showAdmin.Items.Clear();
+            arrTrain = (ArrayList)Session["myDriver"];
+            ListBox_showTrain.Items.Clear();
 
-            if (arr == null)
+            if (arrTrain == null)
             {
                 ListBox_showAdmin.Items.Add("Empty");
                 ListBox_showTrain.Items.Add("Empty");
             }
             else
             {
-                for (int i = 0; i < arr.Count; i++)
+                for (int i = 0; i < arrTrain.Count; i++)
                 {
-                    if(((Person)arr[i]).Train)
-                    {
-                        ListBox_showTrain.Items.Add(arr[i].ToString());
-                    }
-
+                    ListBox_showTrain.Items.Add(arrTrain[i].ToString());
                 }
             }
         }
