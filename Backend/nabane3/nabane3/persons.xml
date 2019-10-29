@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<persons>
+	<person>
+		<id>1</id>
+		<name>test</name>
+		<age>22</age>
+		<email>22@ee.dk</email>
+		<keycard>123</keycard>
+	</person>
+	<person>
+		<id>2</id>
+		<name>test2</name>
+		<age>222</age>
+		<email>222@ee.dk</email>
+		<keycard>1234</keycard>
+	</person>
+	<person>
+		<id>12</id>
+		<name>test22</name>
+		<age>222</age>
+		<email>222@ee.dk</email>
+		<keycard>12334</keycard>
+	</person>
+	<person>
+		<id>131123</id>
+		<name>test22123123</name>
+		<age>222</age>
+		<email>222@12312312ee.dk</email>
+		<keycard>12333</keycard>
+	</person>
+</persons>
