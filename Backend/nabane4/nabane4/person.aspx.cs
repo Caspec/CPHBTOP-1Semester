@@ -94,27 +94,6 @@ namespace nabane
             sw.Write("### persons end ###");
 
             sw.Close();
-
-            /*XmlWriterSettings settings = new XmlWriterSettings();
-            settings.Indent = true;
-            settings.IndentChars = "\t";
-
-            using (XmlWriter writer = XmlWriter.Create(Server.MapPath("~/persons.xml"), settings))
-            {
-                writer.WriteStartElement("persons");
-
-                for (int i = 0; i < xml.Count; i++)
-                {
-                    writer.WriteStartElement("person");
-                    writer.WriteElementString("id", ((Person)xml[i]).ID.ToString());
-                    writer.WriteElementString("name", ((Person)xml[i]).Name.ToString());
-                    writer.WriteElementString("age", ((Person)xml[i]).Age.ToString());
-                    writer.WriteElementString("email", ((Person)xml[i]).Email.ToString());
-                    writer.WriteElementString("keycard", ((Person)xml[i]).Mykey.ToString());
-                    writer.WriteEndElement();
-                    writer.Flush();
-                }
-            }*/
         }
     }
 }
