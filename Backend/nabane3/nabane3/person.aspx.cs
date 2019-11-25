@@ -76,6 +76,7 @@ namespace nabane
                 for (int i = 0; i < xml.Count; i++)
                 {
                     writer.WriteStartElement("person");
+                    writer.WriteAttributeString("xmlns", "id", null, ((Person)xml[i]).ID.ToString());
                     writer.WriteElementString("id", ((Person)xml[i]).ID.ToString());
                     writer.WriteElementString("name", ((Person)xml[i]).Name.ToString());
                     writer.WriteElementString("age", ((Person)xml[i]).Age.ToString());
