@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -54,6 +55,7 @@ namespace nabane
                 Person person = new Person(id, name, age, email, key);
                 arrPerson.Add(person);
                 Session["myPerson"] = arrPerson;
+               
 
                 for (int i = 0; i < arrPerson.Count; i++)
                 {
@@ -66,34 +68,48 @@ namespace nabane
         {
             txt = (ArrayList)Session["myPerson"];
 
-            FileStream filestream = new FileStream(Server.MapPath("~/persons.txt"), FileMode.OpenOrCreate, FileAccess.Write);
-            StreamWriter sw = new StreamWriter(filestream);
+            //FileStream filestream = new FileStream(Server.MapPath("~/persons.txt"), FileMode.OpenOrCreate, FileAccess.Write);
+            //StreamWriter sw = new StreamWriter(filestream);
+            //sw.Write("### persons start ###");
+            //sw.Write("\n");
+            //sw.Write("\n");
+            //for (int i = 0; i < txt.Count; i++)
+            //{
+            //    sw.Write("person:");
+            //    sw.Write("\n");
+            //    sw.Write("id: " + ((Person)txt[i]).ID.ToString());
+            //    sw.Write("\n");
+            //    sw.Write("name: " + ((Person)txt[i]).Name.ToString());
+            //    sw.Write("\n");
+            //    sw.Write("age: " + ((Person)txt[i]).Age.ToString());
+            //    sw.Write("\n");
+            //    sw.Write("email: " + ((Person)txt[i]).Email.ToString());
+            //    sw.Write("\n");
+            //    sw.Write("keycard: " + ((Person)txt[i]).Mykey.ToString());
+            //    sw.Write("\n");
+            //    sw.Write("\n");
+            //    sw.Flush();
+            //}
+            //sw.Write("### persons end ###");
+            //sw.Close();
 
-            sw.Write("### persons start ###");
-            sw.Write("\n");
-            sw.Write("\n");
-
+            // New Binary
+            FileStream filestream = new FileStream(Server.MapPath("~/persons.ser"), FileMode.Create, FileAccess.Write, FileShare.None);
+            BinaryWriter bw = new BinaryWriter(filestream);
             for (int i = 0; i < txt.Count; i++)
             {
-                sw.Write("person:");
-                sw.Write("\n");
-                sw.Write("id: " + ((Person)txt[i]).ID.ToString());
-                sw.Write("\n");
-                sw.Write("name: " + ((Person)txt[i]).Name.ToString());
-                sw.Write("\n");
-                sw.Write("age: " + ((Person)txt[i]).Age.ToString());
-                sw.Write("\n");
-                sw.Write("email: " + ((Person)txt[i]).Email.ToString());
-                sw.Write("\n");
-                sw.Write("keycard: " + ((Person)txt[i]).Mykey.ToString());
-                sw.Write("\n");
-                sw.Write("\n");
-                sw.Flush();
+                bw.Write("id: " + ((Person)txt[i]).ID.ToString());
+                bw.Write("name: " + ((Person)txt[i]).Name.ToString());
+                bw.Write("age: " + ((Person)txt[i]).Age.ToString());
+                bw.Write("email: " + ((Person)txt[i]).Email.ToString());
+                bw.Write("keycard: " + ((Person)txt[i]).Mykey.ToString());
+                bw.Write("\n");
+                bw.Write("\n");
+                bw.Flush();
             }
-
-            sw.Write("### persons end ###");
-
-            sw.Close();
+            bw.Close();
+            filestream.Close();
         }
+
     }
 }
